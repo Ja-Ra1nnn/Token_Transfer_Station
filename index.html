@@ -395,7 +395,7 @@
   <!-- 首页核心区 -->
   <div class="hero">
     <div class="hero-text">
-      <h1>境外AIGC Token<br>合规中转 · 学生价</h1>
+      <h1>境外AIGC Token<br></h1>
       <p style="font-size:1.2rem; color:#334155; margin:15px 0;">无需外币支付 · 稳定可靠 · 即买即用</p>
       <div class="advantage-list">
         <span class="advantage-item">🇨🇳 人民币支付</span>
@@ -501,11 +501,11 @@
     <div class="card">
       <p><strong>1. 获取API Key</strong>：付款后通过订单查询或客服获得专属Key。</p>
       <p><strong>2. 调用示例 (cURL)</strong>：</p>
-      <div style="background:#1e293b; color:#e2e8f0; padding:15px; border-radius:12px; font-family:monospace; font-size:0.9rem; margin:12px 0; text-align:left;">
-        curl https://api.tokenbridge.cn/v1/chat \<br>
-        &nbsp;&nbsp;-H "Authorization: Bearer YOUR_API_KEY" \<br>
-        &nbsp;&nbsp;-H "Content-Type: application/json" \<br>
-        &nbsp;&nbsp;-d '{"model":"gpt-4o","messages":[{"role":"user","content":"你好"}]}'
+      <div style="background:#1e293b; color:#e2e8f0; padding:15px; border-radius:12px; font-family:monospace; font-size:0.9rem; margin:12px 0; text-align:left; overflow-x:auto; white-space:nowrap;">
+        <pre style="margin:0; white-space:pre-wrap; word-wrap:break-word;">curl https://api.tokenbridge.cn/v1/chat \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"gpt-4o","messages":[{"role":"user","content":"你好"}]}'</pre>
       </div>
       <p><strong>3. 用量查询</strong>：见下方用量查询入口，输入Key查看剩余额度。</p>
     </div>
@@ -543,12 +543,14 @@
       <p>👥 <strong>推荐1人下单，双方各送5万Token</strong></p>
       <p style="color:#475569;">活动长期有效，联系客服领取。</p>
     </div>
-    <div class="card" style="flex:1; background:#f6f9fe;">
+    <div class="card" style="flex:1; background:#f6f9fe; display:flex; align-items:center; justify-content:center;">
       <h3>🛡️ 合规声明</h3>
-      <p>• 不提供翻墙服务</p>
-      <p>• 不存储用户对话数据</p>
-      <p>• Token为官方正规采购</p>
-      <p>• 不涉及虚拟货币</p>
+    </div>
+    <div class="card" style="flex:100%; background:#f6f9fe; display:flex; flex-wrap:wrap; gap:15px; justify-content:center; padding:15px;">
+      <span style="background:white; padding:8px 16px; border-radius:20px; font-size:0.9rem;">• 不提供翻墙服务</span>
+      <span style="background:white; padding:8px 16px; border-radius:20px; font-size:0.9rem;">• 不存储用户对话数据</span>
+      <span style="background:white; padding:8px 16px; border-radius:20px; font-size:0.9rem;">• Token为官方正规采购</span>
+      <span style="background:white; padding:8px 16px; border-radius:20px; font-size:0.9rem;">• 不涉及虚拟货币</span>
     </div>
   </section>
 
