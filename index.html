@@ -278,7 +278,7 @@
       font-size: 0.9rem;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
       .hero-text h1 {
         font-size: 2rem;
       }
@@ -289,6 +289,62 @@
       }
       .nav-links {
         gap: 15px;
+      }
+      /* 移动端定价套餐 */
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      .card {
+        padding: 20px 16px;
+      }
+      .card h3 {
+        font-size: 1.2rem;
+      }
+      .price {
+        font-size: 2.2rem;
+      }
+      /* 移动端购买流程 */
+      .steps {
+        gap: 10px;
+      }
+      .step {
+        flex: 1 1 120px;
+        padding: 15px 10px;
+      }
+      .step-number {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+      }
+      .step strong {
+        font-size: 0.9rem;
+      }
+      .step br {
+        display: none;
+      }
+      /* 移动端表单 */
+      .flex-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      input {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+      /* 移动端弹窗 */
+      #paymentModal, #successModal {
+        padding: 20px;
+      }
+      #paymentModal > div, #successModal > div {
+        width: 95%;
+        max-width: 320px;
+        padding: 20px;
+      }
+      #paymentQR {
+        width: 180px;
+        height: 180px;
       }
     }
 
@@ -550,7 +606,15 @@
     
     // 使用用户提供的微信收款二维码
     const qrUrl = 'https://r2.image-upload.app/tyImg/1gXVJQm9N.jpg'; // 用户的微信收款二维码
-    document.getElementById('paymentQR').src = qrUrl;
+    const qrImage = document.getElementById('paymentQR');
+    qrImage.src = qrUrl;
+    
+    // 添加图片加载错误处理
+    qrImage.onerror = function() {
+      // 如果图片加载失败，使用备用二维码
+      this.src = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=WeChat%20Payment';
+      this.alt = '微信收款二维码';
+    };
     
     // 显示弹窗
     document.getElementById('paymentModal').style.display = 'flex';
